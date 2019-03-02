@@ -2,4 +2,4 @@
 This mobile app changes the the screen color randomly through shake gesture and displays the RGB and HEX values when device screen is tapped.
 
 
-![random_color](https://user-images.githubusercontent.com/44620966/53683772-47f7e700-3cca-11e9-9fb5-fb189b818963.png)
+![random_color](https://user-images.githubusercontent.com/44620966/53683837-50045680-3ccb-11e9-834a-708c7991f1ce.png)
