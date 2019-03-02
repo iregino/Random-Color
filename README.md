@@ -3,6 +3,4 @@ This mobile application changes the the screen color randomly through shake gest
 
 Here is a random screenshot to represent my application.
 
-![a random photo](http://www.picsum.photos/200/200)
-
-![random_color](https://user-images.githubusercontent.com/44620966/53683646-ed11c000-3cc8-11e9-9ccd-e979cea9cb95.png)
+![random_color](https://user-images.githubusercontent.com/44620966/53683772-47f7e700-3cca-11e9-9fb5-fb189b818963.png)
