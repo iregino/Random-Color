@@ -19,25 +19,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-Jo-6W2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="47" y="91" width="272" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <connections>
                                     <action selector="colorButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mo-U1-Enp"/>
-                                    <outletCollection property="gestureRecognizers" destination="YeF-Ch-UmN" appends="YES" id="2hR-lx-zPK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="X3x-kO-QCc" appends="YES" id="M2q-M0-3mG"/>
+                            <outletCollection property="gestureRecognizers" destination="l17-KZ-tje" appends="YES" id="Aio-3B-8F0"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="colorButton" destination="1OT-Jo-6W2" id="qkz-B4-vRE"/>
+                        <outlet property="tapGestureRecogniger" destination="X3x-kO-QCc" id="laZ-Ot-qbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="YeF-Ch-UmN"/>
+                <tapGestureRecognizer id="X3x-kO-QCc"/>
+                <swipeGestureRecognizer direction="right" id="l17-KZ-tje">
+                    <connections>
+                        <action selector="handleSwipeGesture:" destination="BYZ-38-t0r" id="7wt-Nt-ZMU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="133.5832083958021"/>
         </scene>
