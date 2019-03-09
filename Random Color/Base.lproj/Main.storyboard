@@ -18,18 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-Jo-6W2">
-                                <rect key="frame" x="47" y="91" width="272" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <connections>
-                                    <action selector="colorButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mo-U1-Enp"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGt-ho-J9j">
+                                <rect key="frame" x="15" y="333.5" width="345" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="XGt-ho-J9j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qy5-8K-rEi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XGt-ho-J9j" secondAttribute="trailing" constant="15" id="WHZ-eY-xIy"/>
+                            <constraint firstItem="XGt-ho-J9j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="crD-CX-up6"/>
+                            <constraint firstItem="XGt-ho-J9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dQE-yI-Sks"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="X3x-kO-QCc" appends="YES" id="M2q-M0-3mG"/>
@@ -37,12 +40,16 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="colorButton" destination="1OT-Jo-6W2" id="qkz-B4-vRE"/>
+                        <outlet property="colorLabel" destination="XGt-ho-J9j" id="GET-KP-9DU"/>
                         <outlet property="tapGestureRecogniger" destination="X3x-kO-QCc" id="laZ-Ot-qbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="X3x-kO-QCc"/>
+                <tapGestureRecognizer id="X3x-kO-QCc">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="BYZ-38-t0r" id="Al1-iS-NUT"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="l17-KZ-tje">
                     <connections>
                         <action selector="handleSwipeGesture:" destination="BYZ-38-t0r" id="7wt-Nt-ZMU"/>

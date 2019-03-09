@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     var green = 255
     var blue = 255
     
-    @IBOutlet weak var colorButton: UIButton!
+    @IBOutlet weak var colorLabel: UILabel!
+    
     @IBOutlet var tapGestureRecogniger: UITapGestureRecognizer!
     
     override func viewDidLoad() {
@@ -38,31 +39,43 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         view.addGestureRecognizer(tap)
         
+        // Create swipe gesture recognizer and add it to the view
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
         view.addGestureRecognizer(swipe)
         
-        //set background color to white
+        //set background color to white and color label to empty string
         view.backgroundColor = UIColor(red: red, green: green, blue: blue)
+        colorLabel.text = ""
         
     } // end viewDidLoad()
     
-    // Displays the RGB values when display screen is pressed
-    @IBAction func colorButtonClicked(_ sender: UIButton) {
-        
-        let hexValue = String(format:"%02X", Int(red)) + String(format:"%02X", Int(green)) + String(format:"%02X", Int(blue))
-        colorButton.setTitle("RGB (\(red),\(green),\(blue))\nHEX #\(hexValue)", for: .normal)
-        colorButton.titleLabel?.textAlignment = NSTextAlignment.center
-    
-    } // end colorButtonClicked()
     
     // Displays the RGB and Hex values when user swipes the screen
     @IBAction func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
         
         let hexValue = String(format:"%02X", Int(red)) + String(format:"%02X", Int(green)) + String(format:"%02X", Int(blue))
-        colorButton.setTitle("RGB (\(red),\(green),\(blue))\nHEX #\(hexValue)", for: .normal)
-        colorButton.titleLabel?.textAlignment = NSTextAlignment.center
+        colorLabel.text = "RGB (\(red),\(green),\(blue))\nHEX #\(hexValue)"
 
     } // end handleSwipeGesture()
+
+    // Creates random RGB numbers and use them to set a new background color when device screen is tapped
+    @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
+        
+        if sender.state == .ended { // When screen is tapped
+            
+            // Create random RGB numbers
+            red = Int.random(in: 0...255)
+            green = Int.random(in: 0...255)
+            blue = Int.random(in: 0...255)
+            
+            // Set background color with UIColor object
+            view.backgroundColor = UIColor(red: red, green: green, blue: blue)
+            
+            // Clears colorButton text
+            colorLabel.text = ""
+        } // end if
+        
+    } // end handleTapGesture()
     
     // Creates random RGB numbers and use them to set a new background color when device is shaken
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -79,28 +92,9 @@ class ViewController: UIViewController {
             view.backgroundColor = UIColor(red: red, green: green, blue: blue)
             
             // Clears colorButton text
-            colorButton.setTitle("", for: .normal)
+            colorLabel.text = ""
             
         } // end if
     } // end motionEnded()
-    
-    // Creates random RGB numbers and use them to set a new background color when device screen is tapped
-    @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
-        
-        if sender.state == .ended { // When screen is tapped
-            
-            // Create random RGB numbers
-            red = Int.random(in: 0...255)
-            green = Int.random(in: 0...255)
-            blue = Int.random(in: 0...255)
-            
-            // Set background color with UIColor object
-            view.backgroundColor = UIColor(red: red, green: green, blue: blue)
-            
-            // Clears colorButton text
-            colorButton.setTitle("", for: .normal)
-        } // end if
-        
-    } // end handleTapGesture()
     
 } // end ViewController
