@@ -9,3 +9,7 @@ This app changes the the screen color randomly through shake gesture or single t
 ### Technology
 
 Swift 4.2, Xcode 10
+
+### Purpose
+
+The goal of this exercise is to demonstrate use of random method and update view background color using the randomly generated RGB values. In addition, it is a use case for tap and swipe gestures.
